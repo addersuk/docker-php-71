@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y git libmcrypt-dev libpq-dev libcurl4-gn
 RUN docker-php-ext-install mbstring mcrypt pdo_pgsql curl json intl gd xml zip bz2 opcache xsl 
 RUN pecl install xdebug-2.5.5
 RUN docker-php-ext-enable xdebug
+RUN pecl install mongodb
+RUN docker-php-ext-enable mongodb
 RUN pecl install ast
 RUN docker-php-ext-enable ast
 RUN curl -sS https://getcomposer.org/installer | php
